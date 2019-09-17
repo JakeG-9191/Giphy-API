@@ -1,0 +1,10 @@
+Have array for placeholder for themed gifs
+
+Have ajax call that ties into giphy and displays 10 gifs based on search parameters, these should come in as stills and then move to animation on click
+
+create onclick function that changes state of gifs, two states include "still" and "animated"
+
+add search bar that grabs user value, places it into array, ties into ajax call and produces proper function results 
+
+ratings must also be displayed with associated gifs, likely in a seperate child element 
+
