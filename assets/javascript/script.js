@@ -1,12 +1,12 @@
 var topics = [
-  "Die Hard", "Mission Impossible", "Signs", "", ""
+  "Die Hard", "Mission Impossible", "Signs", "Day After Tomorrow", "The Martian", "The Matrix", "Indiana Jones", "Mad Max", "John Wick", "James Bond"
 ];
 
 
 function searchGif() {
 
   // var search = $(this).attr("data-name");
-  var search = "Die Hard"
+  var search = topics
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&limit=10&offset=10";
 
   $.ajax({
@@ -57,7 +57,11 @@ function searchGif() {
 }
 
 for (var i = 0; i < topics.length; i++){
+    var gifButton = $("<button>")
 
+    //create $(this).something to grab value
+
+    $(".button-here").append(gifButton);
 }
 
 
