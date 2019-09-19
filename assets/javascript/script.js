@@ -25,13 +25,14 @@ $(document).on("click", ".btn-block", function (event) {
 
 function searchGif() {
   var search = gifNess;
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&offset=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&offset=10&limit=15";
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
     var giphyData = response.data;
+    console.log(giphyData)
 
     for (var i = 0; i < 15; i++) {
       var newDivide = $("<span>");
