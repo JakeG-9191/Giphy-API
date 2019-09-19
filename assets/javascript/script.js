@@ -1,11 +1,12 @@
 var topics = [
-  "Die Hard", "Mission Impossible", "Jurassic Park", "Day After Tomorrow", "The Martian", "The Matrix", "Indiana Jones", "Mad Max", "John Wick", "James Bond"
+  "Die Hard", "Mission Impossible", "Jurassic Park", "The Day After Tomorrow", "The Martian", "The Matrix", "Indiana Jones", "Mad Max", "John Wick", "James Bond",
 ];
 
-var gifNess;
+var gifNess = "";
 
 $(document).on("click", ".button-click", function () {
   $(".button-here").empty();
+  $(".holder").empty();
   gifNess = $(this).attr("data-name");
   console.log(gifNess)
   searchGif();
@@ -13,24 +14,17 @@ $(document).on("click", ".button-click", function () {
 });
 
 function searchGif() {
-
-  // var search = $(this).attr("data-name");
   var search = gifNess;
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&limit=10&offset=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&offset=10";
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
     var giphyData = response.data;
-    console.log(giphyData)
-    console.log(giphyData[0])
-    console.log(giphyData[0].rating)
-    console.log(giphyData[0].images.fixed_height_still.url)
-    console.log(giphyData[0].images.original.url)
 
-    for (var i = 0; i < topics.length; i++) {
-      var newDiv = $("<div>");
+    for (var i = 0; i < 15; i++) {
+      var newDivide = $("<span>");
       var rating = $("<p>");
 
       rating.text("Rating: " + giphyData[i].rating);
@@ -42,9 +36,8 @@ function searchGif() {
       holdStill.attr("data-state", "still")
       holdStill.attr("class", "gifs");
 
-
-      newDiv.append(rating, holdStill);
-      $(".holder").prepend(newDiv);
+      newDivide.append(rating, holdStill);
+      $(".holder").prepend(newDivide);
     }
 
     $(".gifs").on("click", function () {
@@ -72,7 +65,8 @@ for (var i = 0; i < topics.length; i++) {
 
   //create $(this).something to grab value
 
-  gifButton.attr("class", "button-click")
+  gifButton.attr("class", "button-click");
+  gifButton.attr("class", "btn btn-dark");
   $(".button-here").append(gifButton);
 }};
 
