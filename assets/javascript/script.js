@@ -4,13 +4,23 @@ var topics = [
 
 var gifNess = "";
 
+
 $(document).on("click", ".button-click", function () {
   $(".button-here").empty();
   $(".holder").empty();
   gifNess = $(this).attr("data-name");
-  console.log(gifNess)
   searchGif();
   createGif();
+});
+
+$(document).on("click", ".btn-primary", function (event) {
+  event.preventDefault();
+  var addGif = $("#gif-search").val().trim();
+  topics.push(addGif);
+  $(".button-here").empty();
+  $(".holder").empty();
+  createGif();
+  searchGif();
 });
 
 function searchGif() {
@@ -53,7 +63,6 @@ function searchGif() {
         $(this).attr("data-state", "still")
       }
 
-      console.log(gifState)
     });
   });
 };
@@ -63,18 +72,9 @@ for (var i = 0; i < topics.length; i++) {
   var gifValue = topics[i];
   var gifButton = $("<button>").attr("data-name", gifValue).text(gifValue)
 
-  //create $(this).something to grab value
-
   gifButton.attr("class", "button-click");
-  gifButton.attr("class", "btn btn-dark");
   $(".button-here").append(gifButton);
 }};
-
-// $("#button-click").on("click", function () {
-//   var gifNess = $(this).attr("data-name")
-//   console.log(gifNess)
-// });
-
 
 searchGif();
 createGif();
