@@ -1,12 +1,21 @@
 var topics = [
-  "Die Hard", "Mission Impossible", "Signs", "Day After Tomorrow", "The Martian", "The Matrix", "Indiana Jones", "Mad Max", "John Wick", "James Bond"
+  "Die Hard", "Mission Impossible", "Jurassic Park", "Day After Tomorrow", "The Martian", "The Matrix", "Indiana Jones", "Mad Max", "John Wick", "James Bond"
 ];
 
+var gifNess;
+
+$(document).on("click", ".button-click", function () {
+  $(".button-here").empty();
+  gifNess = $(this).attr("data-name");
+  console.log(gifNess)
+  searchGif();
+  createGif();
+});
 
 function searchGif() {
 
   // var search = $(this).attr("data-name");
-  var search = topics
+  var search = gifNess;
   var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&limit=10&offset=10";
 
   $.ajax({
@@ -19,13 +28,13 @@ function searchGif() {
     console.log(giphyData[0].rating)
     console.log(giphyData[0].images.fixed_height_still.url)
     console.log(giphyData[0].images.original.url)
-    
-    for (var i = 0; i < topics.length; i++){
+
+    for (var i = 0; i < topics.length; i++) {
       var newDiv = $("<div>");
       var rating = $("<p>");
-      
+
       rating.text("Rating: " + giphyData[i].rating);
-      
+
       var holdStill = $("<img>");
       holdStill.attr("src", giphyData[i].images.fixed_height_still.url);
       holdStill.attr("data-still", giphyData[i].images.fixed_height_still.url);
@@ -33,36 +42,45 @@ function searchGif() {
       holdStill.attr("data-state", "still")
       holdStill.attr("class", "gifs");
 
-      
+
       newDiv.append(rating, holdStill);
       $(".holder").prepend(newDiv);
     }
-    
-    $(".gifs").on("click", function() {
+
+    $(".gifs").on("click", function () {
       var gifState = $(this).attr("data-state");
       var still = $(this).attr("data-still");
       var animate = $(this).attr("data-animate");
-      
-      if (gifState === "still"){
+
+      if (gifState === "still") {
         $(this).attr("src", animate)
         $(this).attr("data-state", "animate")
       } else {
         $(this).attr("src", still)
         $(this).attr("data-state", "still")
       }
-      
+
       console.log(gifState)
     });
   });
-}
+};
 
-for (var i = 0; i < topics.length; i++){
-    var gifButton = $("<button>")
+function createGif(){
+for (var i = 0; i < topics.length; i++) {
+  var gifValue = topics[i];
+  var gifButton = $("<button>").attr("data-name", gifValue).text(gifValue)
 
-    //create $(this).something to grab value
+  //create $(this).something to grab value
 
-    $(".button-here").append(gifButton);
-}
+  gifButton.attr("class", "button-click")
+  $(".button-here").append(gifButton);
+}};
+
+// $("#button-click").on("click", function () {
+//   var gifNess = $(this).attr("data-name")
+//   console.log(gifNess)
+// });
 
 
 searchGif();
+createGif();
