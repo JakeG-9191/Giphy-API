@@ -13,14 +13,14 @@ $(document).on("click", ".button-click", function () {
   createGif();
 });
 
-$(document).on("click", ".btn-primary", function (event) {
+$(document).on("click", ".btn-block", function (event) {
   event.preventDefault();
   var addGif = $("#gif-search").val().trim();
   topics.push(addGif);
   $(".button-here").empty();
   $(".holder").empty();
   createGif();
-  searchGif();
+  $("#gif-search").val("");
 });
 
 function searchGif() {
