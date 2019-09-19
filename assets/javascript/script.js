@@ -25,7 +25,7 @@ $(document).on("click", ".btn-block", function (event) {
 
 function searchGif() {
   var search = gifNess;
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + search + "&offset=10&limit=15";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BJb7F9XyqD68SotUrI7bY6TdlV6witzn&q=" + search + "&offset=10&limit=15";
 
   $.ajax({
     url: queryURL,
@@ -34,7 +34,7 @@ function searchGif() {
     var giphyData = response.data;
     console.log(giphyData)
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 10; i++) {
       var newDivide = $("<span>");
       var rating = $("<p>");
 
