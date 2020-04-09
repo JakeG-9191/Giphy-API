@@ -3,67 +3,68 @@ font-family: 'Vollkorn SC', serif;
 font-family: 'Cinzel', serif; */
 
 body {
-    text-align: center;
-    background-image: url("https://www.maxim.com/.image/t_share/MTU0NTA2MzM3NzMwOTYyNDgy/john-wick-club-scene-screengrab.jpg");
-    background-size: 110%;
-    background-attachment: fixed;
-    font-family:'Bangers', cursive;
+  text-align: center;
+  background-image: url('https://www.maxim.com/.image/t_share/MTU0NTA2MzM3NzMwOTYyNDgy/john-wick-club-scene-screengrab.jpg');
+  background-size: 110%;
+  background-attachment: fixed;
+  font-family: 'Bangers', cursive;
 }
 
 .jumbotron {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5%;
-    border-radius: 18px;
-    opacity: .95;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 18px;
+  opacity: 0.95;
 }
 
 .btn-danger {
-    margin: 2% 5%;
-    width: 90%;
-    border-radius: 18px;
+  margin: 2% 5%;
+  width: 90%;
+  border-radius: 18px;
 }
 
 .button-click {
-    margin: 1%;
-    padding: 1% 4%;
-    background: black;
-    color: white;
-    border-radius: 18px;
-    border-style: hidden;
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
+  margin: 1%;
+  padding: 1% 4%;
+  background: black;
+  color: white;
+  border-radius: 18px;
+  border-style: hidden;
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
 }
 
 p {
-    font-size: 28px;
-    font-family: 'Vollkorn SC', serif;
-    border-top: 20px;
-    border-bottom: 0;
-    border-left: 0;
-    border-right: 0;
-    border-style: solid;
-    margin-top: 2%;
-    border-radius: 18px;
+  font-size: 28px;
+  font-family: 'Vollkorn SC', serif;
+  border-top: 20px;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  border-style: solid;
+  margin-top: 2%;
+  border-radius: 18px;
 }
 
 img {
-    padding: 1rem;
-    background-color: lawngreen;
+  padding: 1rem;
+  background-color: lawngreen;
+  width: 100%;
 }
 
 #gif-search {
-    width: 50%;
-    margin-left: 25%;
-    font-size: 20px;
+  width: 50%;
+  margin-left: 25%;
+  font-size: 20px;
 }
 
 #page-info {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 24px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 24px;
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
